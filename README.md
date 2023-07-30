@@ -45,9 +45,9 @@ If the issues persist or are not related to the above troubleshooting steps, ple
 Feel free to customize this section to include any other troubleshooting steps that might be relevant to your specific project.
 
 
-------
-### Sample Pages:
 
+### Sample Pages:
+------
 ![wc1](https://github.com/HMFazleRabbi/wc-account-browser/assets/55730363/c3a5680c-8f10-4cbc-b18a-80ab6d5bfdce)
 ![wc2](https://github.com/HMFazleRabbi/wc-account-browser/assets/55730363/cccfe830-020c-43ad-9db9-c2080dc3aa2a)
 ![wc3](https://github.com/HMFazleRabbi/wc-account-browser/assets/55730363/7a048496-27a4-4d95-b133-ea6807742f81)
