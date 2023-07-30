@@ -1,0 +1,90 @@
+/* Profile Container */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+  }
+  
+  /* Avatar Container */
+  .avatar-container {
+    margin-bottom: 10px;
+  }
+  
+  /* Avatar */
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  /* User Info */
+  .info {
+    text-align: center;
+  }
+  
+  /* User Name */
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* User Address */
+  .address {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Connected To */
+  .connected-to {
+    margin: 10px 0;
+    color: #444;
+  }
+  
+  /* Disconnect Button */
+  .disconnect-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+  }
+  
+  .disconnect-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Disabled Connector Button */
+  .connector-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    margin: 5px;
+  }
+  
+  /* Unsupported Connector Button */
+  .connector-btn.unsupported {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .connector-btn:hover {
+    background-color: #1976d2;
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: #f44336;
+    margin-top: 10px;
+  }
+  
