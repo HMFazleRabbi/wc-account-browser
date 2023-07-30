@@ -3,7 +3,6 @@ import {
   useAccount,
   useConnect,
   useDisconnect,
-  useEnsAvatar,
   useEnsName,
 } from 'wagmi';
 
@@ -11,13 +10,16 @@ import './Profile.css'; // Import CSS file for styling (create this file separat
 
 export function Profile() {
   const { address, connector, isConnected } = useAccount();
-  const { data: ensAvatar } = useEnsAvatar({ address });
   const { data: ensName } = useEnsName({ address });
   const { connect, connectors, error, isLoading, pendingConnector } = useConnect();
   const { disconnect } = useDisconnect();
 
-  const handleConnect = (connector) => {
-    connect({ connector });
+  const handleConnect = async (connector) => {
+    try {
+      await connect({ connector });
+    } catch (error) {
+      console.error('Connection failed:', error.message);
+    }
   };
 
   return (
@@ -25,12 +27,12 @@ export function Profile() {
       <div className="card">
         {isConnected ? (
           <>
-            <div className="avatar-container">
-              <img src={ensAvatar} alt="ENS Avatar" className="avatar" />
+            <div className="avatar-placeholder">
+              <span className="avatar-initials">{ensName ? ensName.charAt(0) : address.charAt(0)}</span>
             </div>
             <div className="info">
               {ensName ? (
-                <div className="name">{`${ensName} (${address})`}</div>
+                <div className="name">{ensName}</div>
               ) : (
                 <div className="address">{address}</div>
               )}
@@ -41,9 +43,9 @@ export function Profile() {
             </div>
           </>
         ) : (
-          <>
+          <div className="card-content">
             <div className="connectors-container">
-              <p className="connect-text">Connect using:</p>
+              <div className="connect-text">Connect using:</div>
               <div className="connector-buttons">
                 {connectors.map((connector) => (
                   <button
@@ -57,8 +59,12 @@ export function Profile() {
                 ))}
               </div>
             </div>
-            {error && <div className="error-message">{error.message}</div>}
-          </>
+            {error && (
+              <div className="error-message">
+                <p>Connection failed. Please try again.</p>
+              </div>
+            )}
+          </div>
         )}
       </div>
     </div>

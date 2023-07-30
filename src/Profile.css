@@ -13,15 +13,77 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   background-color: #f8f8f8;
+  max-width: 400px; /* Optional: Limit card width for better readability */
+}
+
+/* Avatar Placeholder */
+.avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ccc;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Avatar Initials */
+.avatar-initials {
+  line-height: 1;
+}
+
+/* Info Section */
+.info {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* User Name */
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* User Address */
+.address {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Connected To */
+.connected-to {
+  margin-top: 5px;
+  color: #444;
+}
+
+/* Disconnect Button */
+.disconnect-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+}
+
+.disconnect-btn:hover {
+  background-color: #d32f2f;
 }
 
 /* Connectors Container */
 .connectors-container {
   text-align: center;
+  margin-top: 20px;
 }
 
 /* Connect Text */
@@ -32,11 +94,11 @@
   margin-bottom: 10px;
 }
 
-/* Connector Buttons Container */
+/* Connector Buttons Grid */
 .connector-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
 /* Connector Button */
@@ -47,8 +109,7 @@
   background-color: #2196f3;
   color: #fff;
   border: none;
-  margin: 5px;
-  width: 160px;
+  font-size: 16px;
 }
 
 .connector-btn:hover {
@@ -65,6 +126,12 @@
 .connector-btn.unsupported {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+/* Error Message */
+.error-message {
+  color: #f44336;
+  margin-top: 10px;
 }
 
 /* ... (pre-existing styles) ... */

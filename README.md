@@ -1,3 +1,5 @@
+Sure! Here's the updated response with the troubleshooting section:
+
 ## Dependencies Installation
 
 To run this project locally, you'll need to have the following dependencies installed on your system:
@@ -18,6 +20,8 @@ To run this project locally, you'll need to have the following dependencies inst
 
    **Note on `--legacy-peer-deps`:** The `--legacy-peer-deps` flag is used to instruct npm to use the older, more permissive peer dependency algorithm instead of the stricter one introduced in npm version 7. This flag is helpful in certain scenarios where older packages or dependencies rely on the legacy behavior. However, it's generally recommended to update packages to support the newer peer dependency algorithm for a more robust and maintainable package ecosystem.
 
+   **@wagmi/core:** `@wagmi/core` is a VanillaJS library containing everything you need to start working with Ethereum. It makes it easy to "Connect Wallet," display ENS and balance information, sign messages, interact with contracts, and much more.
+
 Once you have all the dependencies installed, you can start the development server and run the project locally with the following command:
 
 ```bash
@@ -26,6 +30,16 @@ npm start
 
 The project should now be accessible at `http://localhost:3000` in your web browser.
 
-If you encounter any issues during the installation or running of the project, please check the official documentation for each package or seek help in the project's repository.
+## Troubleshooting
 
-Feel free to customize this section to include other dependencies if your project requires additional packages or tools.
+If you encounter any issues while running the project, you can try the following troubleshooting steps:
+
+1. **Clear Browser Cache:** Sometimes, cached data in your browser can interfere with the application's behavior. Try clearing your browser cache and reloading the page.
+
+2. **Run in Incognito Mode:** Running the application in incognito mode (or private browsing mode) can help identify whether the issue is related to cached data or browser extensions.
+
+3. **Clear Activity Tab Data in MetaMask:** If you're using MetaMask for Ethereum interactions, clearing the activity tab data in MetaMask might resolve certain wallet-related issues.
+
+If the issues persist or are not related to the above troubleshooting steps, please check the official documentation for each package, verify your code, and seek help in the project's repository or community forums.
+
+Feel free to customize this section to include any other troubleshooting steps that might be relevant to your specific project.
