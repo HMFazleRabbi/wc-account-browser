@@ -22,42 +22,45 @@ export function Profile() {
 
   return (
     <div className="profile-container">
-      {isConnected ? (
-        <>
-          <div className="avatar-container">
-            <img src={ensAvatar} alt="ENS Avatar" className="avatar" />
-          </div>
-          <div className="info">
-            {ensName ? (
-              <div className="name">{`${ensName} (${address})`}</div>
-            ) : (
-              <div className="address">{address}</div>
-            )}
-            <div className="connected-to">{`Connected to ${connector.name}`}</div>
-            <button className="disconnect-btn" onClick={disconnect}>
-              Disconnect
-            </button>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="connectors-container">
-            {connectors.map((connector) => (
-              <button
-                key={connector.id}
-                onClick={() => handleConnect(connector)}
-                className={`connector-btn ${!connector.ready ? 'unsupported' : ''}`}
-                disabled={!connector.ready}
-              >
-                {connector.name}
-                {!connector.ready && ' (unsupported)'}
-                {isLoading && connector.id === pendingConnector?.id && ' (connecting)'}
+      <div className="card">
+        {isConnected ? (
+          <>
+            <div className="avatar-container">
+              <img src={ensAvatar} alt="ENS Avatar" className="avatar" />
+            </div>
+            <div className="info">
+              {ensName ? (
+                <div className="name">{`${ensName} (${address})`}</div>
+              ) : (
+                <div className="address">{address}</div>
+              )}
+              <div className="connected-to">{`Connected to ${connector.name}`}</div>
+              <button className="disconnect-btn" onClick={disconnect}>
+                Disconnect
               </button>
-            ))}
-          </div>
-          {error && <div className="error-message">{error.message}</div>}
-        </>
-      )}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="connectors-container">
+              <p className="connect-text">Connect using:</p>
+              <div className="connector-buttons">
+                {connectors.map((connector) => (
+                  <button
+                    key={connector.id}
+                    onClick={() => handleConnect(connector)}
+                    className={`connector-btn ${!connector.ready ? 'unsupported' : ''}`}
+                    disabled={!connector.ready}
+                  >
+                    {connector.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+            {error && <div className="error-message">{error.message}</div>}
+          </>
+        )}
+      </div>
     </div>
   );
 }
