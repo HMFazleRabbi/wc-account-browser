@@ -1,3 +1,5 @@
+# Wallet Connector
+The project uses Wagmi to connect to Ethereum wallets, offering options to use MetaMask, WalletConnect, and Coinbase. Wagmi is a collection of React Hooks that simplifies tasks like "Connect Wallet" so you can start working with Ethereum.
 
 ## Dependencies Installation
 
