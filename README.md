@@ -1,4 +1,3 @@
-Sure! Here's the updated response with the troubleshooting section:
 
 ## Dependencies Installation
 
